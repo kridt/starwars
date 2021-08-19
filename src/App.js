@@ -1,18 +1,20 @@
 import './App.css';
 import Film from './pages/Film';
 import { Router } from "@reach/router";
-import axios from 'axios';
+import Background from './components/Background';
 
 function App() {
 
   
 
   return (
-    <Router className="App">
-            
+    <div className="App">
+      <img className="backgroundimg" src="./images/star-wars-backgound.png" alt="background"/>
+    <Router className="router">
       <Film path="/" />
 
     </Router>
+    </div>
   );
 }
 
