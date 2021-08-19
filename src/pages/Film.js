@@ -6,6 +6,8 @@ import { Link } from "@reach/router";
 export default function Film() {
     var [film, setFilm] = useState({});
 
+    
+
     useEffect(
         function (){
 
@@ -20,17 +22,21 @@ export default function Film() {
             return a.episode_id - b.episode_id;
         })
 
-        console.log(inOrder);
+        
         
     return (
         <div>
-            <h1>Star Wars API</h1>
+            <h1 className="movieTitle">Star Wars API</h1>
             <div>
                  <ol className="moviesOrder">
                     {film && film.results?.map((info)=>{
                         
+                        var movieUrl = info.url;
+                        var numberOnly = movieUrl.match(/\d+/)
+                        console.log(parseInt(numberOnly));
+
                         return(
-                            <Link to={"/movie/" + info.episode_id} key={info.episode_id}>{info.episode_id}. {info.title}</Link>
+                            <Link to={"/movie/" + numberOnly} key={info.episode_id}>{info.episode_id}. {info.title}</Link>
                         )
 
                     })}
