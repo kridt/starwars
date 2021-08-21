@@ -24,27 +24,27 @@ export default function CharacterPage({ id }) {
         <h1>Stats</h1>
         <div className="box1">
           <div>
-            <p>Height:</p>
-            <p>{character.height + " cm"}</p>
+            <p className="text1">Height:</p>
+            <p className="text1">{character.height + " cm"}</p>
           </div>
 
           <div>
-            <p>Hair Color</p>
-            <p>{character.hair_color}</p>
+            <p className="text1">Hair Color</p>
+            <p className="text1">{character.hair_color}</p>
           </div>
 
           <div>
-            <p>Skin Color</p>
-            <p>{character.skin_color}</p>
+            <p className="text1">Skin Color</p>
+            <p className="text1">{character.skin_color}</p>
           </div>
 
           <div className="homePlanet">
-            <p>Home Planet</p>
+            <p className="text1">Home Planet</p>
             <PlanetFetch planet={character.homeworld} />
           </div>
           <div>
-            <p>Birth Year</p>
-            <p>{character.birth_year}</p>
+            <p className="text1">Birth Year</p>
+            <p className="text1">{character.birth_year}</p>
           </div>
         </div>
       </div>
