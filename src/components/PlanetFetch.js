@@ -13,7 +13,7 @@ export default function PlanetFetch({ planet }) {
 
   return (
     <div>
-      <p className="text1">{planets.name}</p>
+      <p className="text1"> {planets.name} </p>{" "}
     </div>
   );
 }
