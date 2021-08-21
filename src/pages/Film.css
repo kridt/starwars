@@ -1,6 +1,22 @@
-.moviesOrder{
-    display: grid;
-    display: flex;
-    flex-direction: column;
-    margin-left:5em;
+.moviesOrder {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: 5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.moviesOrder a {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+}
+.filmDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.filmDiv h1 {
+  margin-bottom: 1em;
 }

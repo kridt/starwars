@@ -1,29 +1,38 @@
-img{
-  width:100%;
+img {
+  width: 100%;
   height: auto;
 }
+
 h1 {
   text-shadow: 5px 5px #777777;
   font-size: 4em;
   text-align: center;
   margin-top: 1em;
+  color: white;
 }
 
-*{
-  color: white;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Playfair Display", serif;
 }
 
-.App{
+.App {
   display: grid;
 }
 
-.backgroundimg{
+.backgroundimg {
   grid-area: 1/1/-1/-1;
 }
 
-.router{
+.router {
   grid-area: 1/1/-1/-1;
+}
+
+.box1 {
+  background-color: white;
+  max-width: 75%;
+  box-shadow: 5px 5px 15px 5px #777777;
+  margin: 0 auto;
 }

@@ -1,47 +1,47 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "./Film.css";
 import { Link } from "@reach/router";
 
 export default function Film() {
-    var [film, setFilm] = useState({});
+  var [film, setFilm] = useState({});
 
-    
+  useEffect(
+    function () {
+      axios
+        .get("https://swapi.dev/api/films/")
+        .then((response) => setFilm(response.data));
+    },
+    [setFilm]
+  );
 
-    useEffect(
-        function (){
+  var inOrder = film.results;
 
-            axios.get("https://swapi.dev/api/films/")
-            .then(response => setFilm(response.data));
-        }, [setFilm])
+  inOrder?.sort(function (a, b) {
+    return a.episode_id - b.episode_id;
+  });
 
-       
-        var inOrder = film.results;
+  return (
+    <div className="filmDiv">
+      <h1 className="movieTitle">Star Wars API</h1>
+      <h1>Pick a movie</h1>
+      <div>
+        <div className="box1">
+          <ol className="moviesOrder">
+            {film &&
+              film.results?.map((info) => {
+                var movieUrl = info.url;
+                var numberOnly = movieUrl.match(/\d+/);
 
-        inOrder?.sort(function(a, b){
-            return a.episode_id - b.episode_id;
-        })
-
-        
-        
-    return (
-        <div>
-            <h1 className="movieTitle">Star Wars API</h1>
-            <div>
-                 <ol className="moviesOrder">
-                    {film && film.results?.map((info)=>{
-                        
-                        var movieUrl = info.url;
-                        var numberOnly = movieUrl.match(/\d+/)
-                        console.log(parseInt(numberOnly));
-
-                        return(
-                            <Link to={"/movie/" + numberOnly} key={info.episode_id}>{info.episode_id}. {info.title}</Link>
-                        )
-
-                    })}
-                </ol> 
-            </div>
+                return (
+                  <Link to={"/movie/" + numberOnly} key={info.episode_id}>
+                    {info.episode_id}. {info.title}
+                  </Link>
+                );
+              })}
+          </ol>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
