@@ -1,4 +1,5 @@
 .characterPage .box1 {
+  /* Inheritance in css is not very good. */
   display: flex;
   justify-content: space-evenly;
   padding: 1em 0;

@@ -11,6 +11,9 @@ function App() {
       <img
         className="backgroundimg"
         src="./images/star-wars-backgound.png"
+        // It is better to import first and then put in src
+        // import backgound from "./images/star-wars-backgound.png";
+        // <img className="backgroundimg" src={backgound} />
         alt="background"
       />
       <Router className="router">
