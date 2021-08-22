@@ -21,6 +21,10 @@ export default function Film() {
     return a.episode_id - b.episode_id;
   });
 
+  // this is very wrong
+  // You cannot mutate the original data
+  // If you need some kind of data manipulation, write a function. You don’t need to do it right in the component.
+
   return (
     <div className="filmDiv">
       <h1 className="movieTitle">Star Wars API</h1>
@@ -31,6 +35,7 @@ export default function Film() {
             {film &&
               film.results?.map((info) => {
                 var movieUrl = info.url;
+                // never need to use var, always only const and in extreme cases let
                 var numberOnly = movieUrl.match(/\d+/);
 
                 return (
